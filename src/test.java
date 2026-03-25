@@ -1,26 +1,52 @@
 import java.util.*;
 public class test {
-    static int ans = 0;
-    public static void  dfs(int[] qian, int l , int r){
-        if(l>=r) return ;
-        for(int i = l ; i<r ; i++){
-            if(qian[i]-qian[l-1] == qian[r]-qian[i]){
-                ans++;
-                dfs(qian,l,i);
-                dfs(qian,i+1,r);
+    public static int  solve(int C, int L, int n, int[] prices, int[] distances){
+        for(int i = 1;i<n;i++){
+            if(distances[i]-distances[i-1]>C) {
+                return -1;
             }
         }
+        if(L<= C) return 0;
+        int []dp = new int[L+1]; // 走当前到i需要耗费的前面充电桩最少的钱
+        Arrays.fill(dp,-1);
+        for(int i = 0;i<C;i++){
+            dp[i] = 0;
+        }
+        for(int i = 0;i<n;i++){
+            int start = distances[i];
+            for(int j = start; j<start+C; j++){
+                if(j > L) break;
+                if(dp[j] == -1) dp[j] = prices[i];
+                else {
+                    if (dp[j] > prices[i]) dp[j] = prices[i];
+                }
+            }
+        }
+        int res = 0;
+        for (int i = 1; i < L; i++) {
+            if(dp[i] == -1) return -1;
+            res += dp[i];
+            System.out.println("i="+i+", dp[i]="+dp[i]);
+        }
+        return res;
     }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        // 注意 hasNext 和 hasNextLine 的区别
+        int L = in.nextInt();
+
+        int C = in.nextInt();
         int n = in.nextInt();
-        int[] qian = new int[n+1];
-        for(int i = 0 ; i< n ; i++){
-            qian[i+1] = qian[i]+in.nextInt();
+        int[] prices = new int[n];
+        int[] distances = new int[n];
+        for(int i = 0;i<n;i++){
+            distances[i] = in.nextInt();
+            prices[i] = in.nextInt();
         }
-        dfs(qian,1,n);
-        System.out.println(ans);
+        System.out.println(solve(C,L,n,prices,distances));
     }
+
+
+
+
 }
