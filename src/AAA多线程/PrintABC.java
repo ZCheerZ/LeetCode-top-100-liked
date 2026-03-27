@@ -8,6 +8,9 @@ public class PrintABC {
     private final Semaphore semC = new Semaphore(0);
     private static int n = 3;   // 打印轮次
 
+
+
+
     public static void main(String[] args) {
         PrintABC PrintABC = new PrintABC();
         new Thread(()->PrintABC.print('A',PrintABC.semA,PrintABC.semB)).start();
