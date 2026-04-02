@@ -1,10 +1,10 @@
-package Leetcode成长之路.回溯篇.Q22_括号生成;
+package Leetcode成长之路.回溯篇;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Solution {
+class Q22_括号生成 {
     List<String> res = new ArrayList<>();
 
     public void dfs(int left, int right,int n , String cur) {
@@ -22,10 +22,10 @@ class Solution {
         return res ;
     }
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Q22_括号生成 q22括号生成 = new Q22_括号生成();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        List<String> res = solution.generateParenthesis(n);
+        List<String> res = q22括号生成.generateParenthesis(n);
         for(String s : res){
             System.out.println(s);
         }

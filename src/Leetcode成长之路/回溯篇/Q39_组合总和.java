@@ -1,10 +1,10 @@
-package Leetcode成长之路.回溯篇.Q39_组合总和;
+package Leetcode成长之路.回溯篇;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Solution {
+class Q39_组合总和 {
     List<List<Integer>> res = new ArrayList<>();
     List<Integer> cur = new ArrayList<>();
 
@@ -26,7 +26,7 @@ class Solution {
         return res;
     }
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Q39_组合总和 q39组合总和 = new Q39_组合总和();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int candidates[] = new int[n];
@@ -34,7 +34,7 @@ class Solution {
             candidates[i] = scanner.nextInt();
         }
         int target = scanner.nextInt();
-        List<List<Integer>> res = solution.combinationSum(candidates,target);
+        List<List<Integer>> res = q39组合总和.combinationSum(candidates,target);
         for(List<Integer> cur : res){
             for(int i : cur)
                 System.out.print(i + " ");

@@ -3,7 +3,7 @@ package AAA多线程;
 public class threeThread_Print100 {
     private static final Object lock = new Object();
     private static int cnt = 0;
-    private static final int n = 10;
+    private static final int n = 100;
     static class myrunnable implements Runnable{
         private final int id;
         public myrunnable(int id){
@@ -27,7 +27,6 @@ public class threeThread_Print100 {
                     }
                     else {
                         lock.notifyAll();
-                        return;
                     }
                 }
             }
