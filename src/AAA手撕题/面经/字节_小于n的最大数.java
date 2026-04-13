@@ -1,8 +1,8 @@
-package AAA手撕题;
+package AAA手撕题.面经;
 
 import java.util.*;
 
-public class A面经字节_小于n的最大数 {
+public class 字节_小于n的最大数 {
 /*题目
 给定一个数n，如23121，给定一组数字a,如｛2，4，9｝，求a中元素组成的小于n的最大数，如小于23121的最大数为22999
 23121 3

@@ -1,7 +1,8 @@
-import javax.sound.midi.Soundbank;
+package AAA手撕题;
+
 import java.util.Scanner;
 
-public class test1 {
+public class 美团一面 {
 //    某班级考试成绩按非严格递增顺序记录于整数数组 scores，请返回目标成绩 target 的出现次数。
 //
 //    示例 1：

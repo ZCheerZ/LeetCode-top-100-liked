@@ -1,5 +1,15 @@
+package AAA笔试题;
+
 import java.util.*;
-public class test {
+public class PDD笔试 {
+/*
+    pdd 笔试加油站问题描述
+    每次从出发点开始油箱是满的，不需要加油！
+    第一行输入三个数表示路程L，油箱容量C，加油站个数n。
+    下面输入n行表示加油站位置和该加油站加一升油多少钱，
+    输出返回车到达终点最小的花费，如果不能到终点，返回-1。
+*/
+
     public static int  solve(int C, int L, int n, int[] prices, int[] distances){
         for(int i = 1;i<n;i++){
             if(distances[i]-distances[i-1]>C) {
