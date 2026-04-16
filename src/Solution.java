@@ -4,16 +4,16 @@ class Solution {
     public void solve(int[] nums) {
     }
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        Scanner scanner = new Scanner(System.in);
         Scanner s = new Scanner(System.in);
         String in = s.nextLine();
-        String sp[] =  in.split(" ");
-        int sum = 0;
-        for(String t : sp){
-            System.out.println(t);
-            sum  += t.length();
+        StringBuffer res = new StringBuffer();
+        for(char t : in.toCharArray()){
+            char low = Character.toLowerCase(t);
+            if( low  == 'a' || low == 'e' || low == 'i' || low == 'o' || low == 'u'){
+                res.append(Character.toUpperCase(t));
+            }
+            else res.append(t);
         }
-        System.out.printf("%f", (double)sum / sp.length);
+        System.out.println(res);
     }
 }
